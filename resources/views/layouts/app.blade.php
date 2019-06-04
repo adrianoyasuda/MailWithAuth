@@ -48,30 +48,31 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="active">
-                                <a href="{{ route('login') }}">{{ __('Login') }}</a>
+
+                                <a href="{{ route('login') }}"><img src="img/person_icon.png" width="18" height="18">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="active">
-                                    <a  href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a  href="{{ route('register') }}"><img src="img/check_icon.png" width="15" height="15"> {{ __('Registrar') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                            <li>
+                                <a>{{ Auth::user()->name }}</a>
+                            </li>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                            <li class="active">
+
+                                <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                        <img src="img/logout_icon.png" width="18" height="18">
+                                        {{ __('Sair') }}
+                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                             </li>
                         @endguest
                     </ul>
