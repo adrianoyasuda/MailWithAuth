@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('auth/login');
 });
 
 Route::post('/enviar', 'MailController@enviar');
@@ -21,3 +21,6 @@ Route::post('/concluir', 'MailController@concluir');
 Route::get('/socios', 'SocioController@listar');
 Route::post('/cadastrar', 'SocioController@cadastrar');
 Route::post('/enviar', 'SocioController@enviar');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

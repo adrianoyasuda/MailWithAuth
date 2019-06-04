@@ -80,7 +80,8 @@
                 <input type="email" class="form-control" name="email" maxlength="50" required>
             </div>
         </div>
-
+        <br>
+           <button type="submit" class="btn btn-primary btn-block"><b>Cadastrar</b></button>
         <br>
 
     </form>
@@ -116,7 +117,6 @@
             </tbody>
         </table>
 
-        <button type="submit" class="btn btn-primary btn-block"><b>Cadastrar</b></button>
         
         <br><h4><strong>Enviar Relatório Financeiro</strong></h4><br>
         
